@@ -14,6 +14,7 @@ class SVSignUpComponent extends StatefulWidget {
 }
 
 class _SVSignUpComponentState extends State<SVSignUpComponent> {
+  bool _checkBoxMarked = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -182,9 +183,13 @@ class _SVSignUpComponentState extends State<SVSignUpComponent> {
                   Row(
                     children: <Widget>[
                       Checkbox(
-                        value: true, // Replace with your checkbox value
-                        onChanged: (bool?
-                            value) {}, // Replace with your onChanged handler
+                        value:
+                            _checkBoxMarked, // Replace with your checkbox value
+                        onChanged: (bool? value) {
+                          setState(() {
+                            _checkBoxMarked = value ?? false;
+                          });
+                        },
                       ),
                       Expanded(
                         child: Wrap(

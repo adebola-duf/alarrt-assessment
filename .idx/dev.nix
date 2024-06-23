@@ -54,7 +54,7 @@
       previews = {
        
         android = {
-          command = ["flutter" "run" "--machine" "-d" "android" "-d" "localhost:5555"];
+          command = ["flutter" "run" "--machine" "-d" "android" "-d" "localhost:5554"];
           manager = "flutter";
         };
       };

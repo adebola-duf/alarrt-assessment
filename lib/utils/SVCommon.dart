@@ -105,7 +105,7 @@ Widget svHeaderContainer(
       Container(
         width: context.width(),
         decoration: BoxDecoration(
-            color: SVAppColorPrimary,
+            color: alarrtBlue,
             borderRadius: radiusOnly(
                 topLeft: SVAppContainerRadius, topRight: SVAppContainerRadius)),
         padding: EdgeInsets.all(24),
@@ -134,7 +134,7 @@ Widget svAppButton(
     textStyle: boldTextStyle(color: Colors.white),
     onTap: onTap,
     elevation: 0,
-    color: SVAppColorPrimary,
+    color: alarrtBlue,
     width: width ?? context.width() - 32,
     height: 56,
   );

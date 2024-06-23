@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_socialv/screens/auth/screens/SVSignInScreen.dart';
 import 'package:prokit_socialv/screens/walk_through_screen.dart';
+import 'package:prokit_socialv/utils/SVConstants.dart';
 
 class SVSplashScreen extends StatefulWidget {
   const SVSplashScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _SVSplashScreenState extends State<SVSplashScreen> {
   }
 
   Future<void> init() async {
-    setStatusBarColor(Colors.red);
+    setStatusBarColor(Colors.transparent);
     await 3.seconds.delay;
     finish(context);
     Walkthrough().launch(context, isNewTask: true);
@@ -36,23 +37,12 @@ class _SVSplashScreenState extends State<SVSplashScreen> {
             width: context.width(),
             fit: BoxFit.fill,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'images/socialv/svAppIcon.png',
-                height: 50,
-                width: 52,
-                fit: BoxFit.cover,
-                color: Colors.white,
-              ),
-              8.width,
-              Text(
-                "SocialV",
-                style: primaryTextStyle(
-                    color: Colors.white, size: 40, weight: FontWeight.w500),
-              ),
-            ],
+          Image.asset(
+            'images/socialv/alarrt_white_logo_with_text.png',
+            height: 130,
+            width: MediaQuery.of(context).size.width * .7,
+            fit: BoxFit.cover,
+            color: Colors.white,
           ),
         ],
       ),

@@ -55,15 +55,13 @@ class _SVSignInScreenState extends State<SVSignInScreen> {
     return Scaffold(
       backgroundColor: svGetScaffoldColor(),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: context.statusBarHeight + 50),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('images/socialv/svAppIcon.png', height: 40, width: 40, fit: BoxFit.cover),
-              8.width,
-              Text(svAppName, style: primaryTextStyle(color: SVAppColorPrimary, size: 28, weight: FontWeight.w500, fontFamily: svFontRoboto)),
-            ],
+          Image.asset(
+            'images/socialv/alarrt_blue_logo_with_text.png',
+            height: 90,
+            fit: BoxFit.cover,
           ),
           40.height,
           svHeaderContainer(
@@ -72,14 +70,24 @@ class _SVSignInScreenState extends State<SVSignInScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TextButton(
-                  child: Text('LOGIN', style: boldTextStyle(color: selectedIndex == 0 ? Colors.white : Colors.white54, size: 16)),
+                  child: Text('LOGIN',
+                      style: boldTextStyle(
+                          color: selectedIndex == 0
+                              ? Colors.white
+                              : Colors.white54,
+                          size: 16)),
                   onPressed: () {
                     selectedIndex = 0;
                     setState(() {});
                   },
                 ),
                 TextButton(
-                  child: Text('SIGNUP', style: boldTextStyle(color: selectedIndex == 1 ? Colors.white : Colors.white54, size: 16)),
+                  child: Text('SIGNUP',
+                      style: boldTextStyle(
+                          color: selectedIndex == 1
+                              ? Colors.white
+                              : Colors.white54,
+                          size: 16)),
                   onPressed: () {
                     selectedIndex = 1;
                     setState(() {});

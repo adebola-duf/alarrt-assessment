@@ -2,12 +2,12 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:prokit_socialv/screens/walk_through_list.dart';
+import 'package:prokit_socialv/data/walk_through_list.dart';
 import 'package:prokit_socialv/utils/SVColors.dart';
 
 import '../main.dart';
 import 'auth/screens/SVSignInScreen.dart';
-import 'heading_text_component.dart';
+import 'alarrt_components/heading_text_component.dart';
 
 class Walkthrough extends StatefulWidget {
   Walkthrough({Key? key}) : super(key: key);
@@ -68,8 +68,7 @@ class _WalkthroughState extends State<Walkthrough> {
             child: Row(
               children: [
                 TextButton(
-                  onPressed: () =>
-                      SVSignInScreen().launch(context),
+                  onPressed: () => SVSignInScreen().launch(context),
                   child: Text("SKIP", style: boldTextStyle()),
                 ),
                 DotIndicator(
@@ -95,8 +94,7 @@ class _WalkthroughState extends State<Walkthrough> {
                     ),
                   ),
                   secondChild: GestureDetector(
-                    onTap: () =>
-                        SVSignInScreen().launch(context),
+                    onTap: () => SVSignInScreen().launch(context),
                     child: Container(
                       padding:
                           EdgeInsets.symmetric(vertical: 8, horizontal: 16),

@@ -9,7 +9,7 @@ class WalkthroughWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 30, right: 30),
+      padding: EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
           64.height,

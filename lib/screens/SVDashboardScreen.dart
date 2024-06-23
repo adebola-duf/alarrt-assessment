@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:prokit_socialv/screens/alarrt_components/modal_bottom_sheet.dart';
 import 'package:prokit_socialv/screens/fragments/SVAddPostFragment.dart';
 import 'package:prokit_socialv/screens/fragments/SVHomeFragment.dart';
 import 'package:prokit_socialv/screens/fragments/SVNotificationFragment.dart';
 import 'package:prokit_socialv/screens/fragments/SVProfileFragment.dart';
 import 'package:prokit_socialv/screens/fragments/SVSearchFragment.dart';
 import 'package:prokit_socialv/utils/SVCommon.dart';
-
 
 class SVDashboardScreen extends StatefulWidget {
   @override
@@ -47,30 +47,67 @@ class _SVDashboardScreenState extends State<SVDashboardScreen> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset('images/socialv/icons/ic_Home.png', height: 24, width: 24, fit: BoxFit.cover, color: context.iconColor).paddingTop(12),
+            icon: Image.asset('images/socialv/icons/ic_Home.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover,
+                    color: context.iconColor)
+                .paddingTop(12),
             label: '',
-            activeIcon: Image.asset('images/socialv/icons/ic_HomeSelected.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            activeIcon: Image.asset('images/socialv/icons/ic_HomeSelected.png',
+                    height: 24, width: 24, fit: BoxFit.cover)
+                .paddingTop(12),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('images/socialv/icons/ic_Search.png', height: 24, width: 24, fit: BoxFit.cover, color: context.iconColor).paddingTop(12),
+            icon: Image.asset('images/socialv/icons/ic_Search.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover,
+                    color: context.iconColor)
+                .paddingTop(12),
             label: '',
-            activeIcon: Image.asset('images/socialv/icons/ic_SearchSelected.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            activeIcon: Image.asset(
+                    'images/socialv/icons/ic_SearchSelected.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover)
+                .paddingTop(12),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('images/socialv/icons/ic_Plus.png', height: 24, width: 24, fit: BoxFit.cover, color: context.iconColor).paddingTop(12),
+            icon: Image.asset('images/socialv/icons/ic_Plus.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover,
+                    color: context.iconColor)
+                .paddingTop(12),
             label: '',
-            activeIcon: Image.asset('images/socialv/icons/ic_PlusSelected.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            activeIcon: Image.asset('images/socialv/icons/ic_PlusSelected.png',
+                    height: 24, width: 24, fit: BoxFit.cover)
+                .paddingTop(12),
           ),
           BottomNavigationBarItem(
-            icon:
-            Image.asset('images/socialv/icons/ic_Notification.png', height: 24, width: 24, fit: BoxFit.cover, color: context.iconColor).paddingTop(12),
+            icon: Image.asset('images/socialv/icons/ic_Notification.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover,
+                    color: context.iconColor)
+                .paddingTop(12),
             label: '',
-            activeIcon: Image.asset('images/socialv/icons/ic_NotificationSelected.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            activeIcon: Image.asset(
+                    'images/socialv/icons/ic_NotificationSelected.png',
+                    height: 24,
+                    width: 24,
+                    fit: BoxFit.cover)
+                .paddingTop(12),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset('images/socialv/icons/ic_User.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            icon: Image.asset('images/socialv/icons/ic_User.png',
+                    height: 24, width: 24, fit: BoxFit.cover)
+                .paddingTop(12),
             label: '',
-            activeIcon: Image.asset('images/socialv/icons/ic_UserSelected.png', height: 24, width: 24, fit: BoxFit.cover).paddingTop(12),
+            activeIcon: Image.asset('images/socialv/icons/ic_UserSelected.png',
+                    height: 24, width: 24, fit: BoxFit.cover)
+                .paddingTop(12),
           ),
         ],
         onTap: (val) {
@@ -79,7 +116,12 @@ class _SVDashboardScreenState extends State<SVDashboardScreen> {
           if (val == 2) {
             selectedIndex = 0;
             setState(() {});
-            SVAddPostFragment().launch(context);
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              builder: (context) => ModalBottomSheet(),
+              backgroundColor: Colors.transparent,
+            );
           }
         },
         currentIndex: selectedIndex,
